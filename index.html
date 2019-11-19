@@ -1,135 +1,42 @@
- <html>
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>基于vue+elementui</title>
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="lib/elementui/theme-chalk/index.css" type="text/css">
-    <style>
-      /* 所有 */
-      #app{
-        width:100%; height:100%;
-      }
-
-      /* 头 */
-      .header {
-        color: rgba(255,255,255,0.75);
-        line-height: 60px;
-        background-color: #24292e;
-        text-align: center;
-      }
-      .header div{
-        display: inline;
-      }
-      .title{
-      }
-      .author{
-        float: right;
-      }
-      .author-img{
-        width: 20px;
-        height: 20px;
-      }
-
-      /* 内容区 */
-      .container{
-        min-height: 600px;
-        width:100%;
-        height: 100%
-      }
-
-      /* 左边内容区 */
-      .left {
-        color: #4b595f;
-        width: 200px;
-      }
-      .left ul{
-        height: 90%;
-      }
-
-      /* 右边内容区 */
-      .right{
-        min-width: 200px;
-      }
-      tbody{
-        font-size: 15px;
-        color: #4b595f;
-      }
-
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>王迪的自我介绍网页</title>
 </head>
+ 
 <body>
-<div id="app">
-  <el-container class="container">
-    <el-header class="header">
-      <div class="title">
-        <span>余小乐的个人demo网站</span>
-      </div>
-      <div @click="openGitHub" class="author">
-        <i class="el-icon-location-outline">yuleGH</i>
-        <img alt="@yuleGH" class="author-img" src="https://avatars2.githubusercontent.com/u/31040588?s=40&amp;v=4">
-      </div>
-    </el-header>
-
-    <el-container>
-      <el-aside class="left">
-        <el-menu :default-active="activeIndex">
-          <el-menu-item index="1" @click="open(aboutMeUrl)"><i class="el-icon-service"></i>关于我</el-menu-item>
-          <el-submenu index="firstMenu.id" v-for="firstMenu in menus" :key="firstMenu.id">
-            <template slot="title"><i :class="firstMenu.iconClass"></i>{{ firstMenu.name }}</template>
-            <el-menu-item-group v-for="secondMenu in firstMenu.children" :key="secondMenu.id">
-              <template slot="title">{{ secondMenu.name }}</template>
-              <el-menu-item v-for="thirdMenu in secondMenu.children" index="thirdMenu.id" :key="thirdMenu.id" @click="open(thirdMenu.url)">{{ thirdMenu.name }}</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-      </el-aside>
-
-      <el-main class="right">
-          <iframe style="width:100%; height:100%; border: 0;" :src="iframeUrl"></iframe>
-      </el-main>
-
-    </el-container>
-  </el-container>
-</div>
-<!-- 引入组件库 -->
-<script type="text/javascript" src="lib/vue.js"></script>
-<script type="text/javascript" src="lib/elementui/index.js"></script>
-
-<script type="text/javascript">
-    new Vue({
-        el: "#app",
-        data: {
-          activeIndex : "1",
-          aboutMeUrl : "aboutme.html",
-          iframeUrl : "aboutme.html",
-
-          menus : [
-            {
-               name: "dialog",
-               id: "dialog",
-               iconClass: "el-icon-message",
-               children:[
-                 {
-                   name: "Notification 通知",
-                   id: "notification",
-                   children: [
-                     {name: "demo1", id: "noti-demo1", url: "dialog/notification/notification.html"}
-                   ]
-                 }
-               ]
-            }
-          ]
-        },
-        methods: {
-          open(url){
-            this.iframeUrl = url;
-          },
-          openGitHub(){
-            window.open("https://github.com/yuleGH", "_blank");
-          }
-        }
-    });
-</script>
-
+  <center><!--让网页中内容居中显示-->
+        <a name="top"></a><!--设置一个锚点，点击时跳转到该位置-->
+        <img src="timg.png" width="160" height="160" />
+        <h1><font color="#FF6633">王迪</font></h1>
+        <p>星座控/轻生活/轻日记/轻梦想</p>
+        <marquee width="750px"><p>======QQ：1476737138======</p></marquee><br /><br />
+        <img src="20190214095702_90925.jpg" />
+        <h2><font color="red"></font></h2>
+        <h3>生活</h3>
+        <p>给时光一份浅浅的回眸，给心灵一份淡淡的安暖，芬芳过往，岁月静好。</p> <br /><br />
+        <hr color="#FFCCCC" width="750px" /><br /><br />
+ 
+        <h2><font color="red">02</font></h2>
+        <h3>工作</h3>
+        <img src="20190214095710_36438.jpg" /><br /><br />
+        <hr color="#FFCCCC" width="750px" /><br /><br />
+ 
+        <h2><font color="red">03</font></h2>
+        <h3>胡言</h3>
+        <p>当网页设计遇上文艺范是一场怎样的邂逅，不要计划相遇，最美好的事情总是偶然发生的！——王迪</p>
+        <img src="img/cat.gif" /><br /><br />
+        <hr color="#FFCCCC" width="750px" /><br /><br />
+ 
+        <h2><font color="red">04</font></h2>
+        <h3>日记</h3>
+        <img src="20190214095726_34296.jpg" /><br /><br /><br />
+ 
+        <a href="#top">点击回到顶部</a><!--希望在这里给用户一个链接，用户点击此处的内容，跳转到锚点的位置-->
+  </center>
+ 
+ 
 </body>
-
 </html>
